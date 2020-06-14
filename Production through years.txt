@@ -1,0 +1,386 @@
+﻿[
+  {
+    "Crop": "Rice",
+    "Production 2006-07": 200.8,
+    "Production 2007-08": 207.9,
+    "Production 2008-09": 213.3,
+    "Production 2009-10": 191.6,
+    "Production 2010-11": 206.4
+  },
+  {
+    "Crop": "Wheat",
+    "Production 2006-07": 131.6,
+    "Production 2007-08": 136.4,
+    "Production 2008-09": 140.1,
+    "Production 2009-10": 140.3,
+    "Production 2010-11": 150.8
+  },
+  {
+    "Crop": "Jowar",
+    "Production 2006-07": 124.3,
+    "Production 2007-08": 137.8,
+    "Production 2008-09": 126,
+    "Production 2009-10": 116.5,
+    "Production 2010-11": 121.8
+  },
+  {
+    "Crop": "Bajra",
+    "Production 2006-07": 136.4,
+    "Production 2007-08": 161.5,
+    "Production 2008-09": 143.9,
+    "Production 2009-10": 105.4,
+    "Production 2010-11": 167.9
+  },
+  {
+    "Crop": "Maize",
+    "Production 2006-07": 198.8,
+    "Production 2007-08": 249.6,
+    "Production 2008-09": 259.8,
+    "Production 2009-10": 220.1,
+    "Production 2010-11": 286
+  },
+  {
+    "Crop": "Ragi",
+    "Production 2006-07": 56.1,
+    "Production 2007-08": 83.6,
+    "Production 2008-09": 79.3,
+    "Production 2009-10": 73.4,
+    "Production 2010-11": 85.2
+  },
+  {
+    "Crop": "Small millets",
+    "Production 2006-07": 53.9,
+    "Production 2007-08": 61.9,
+    "Production 2008-09": 50,
+    "Production 2009-10": 42.9,
+    "Production 2010-11": 82
+  },
+  {
+    "Crop": "Barley",
+    "Production 2006-07": 88.1,
+    "Production 2007-08": 79.3,
+    "Production 2008-09": 112,
+    "Production 2009-10": 89.9,
+    "Production 2010-11": 110.3
+  },
+  {
+    "Crop": "Coarse Cereals",
+    "Production 2006-07": 138.5,
+    "Production 2007-08": 166.4,
+    "Production 2008-09": 163.5,
+    "Production 2009-10": 137,
+    "Production 2010-11": 178.4
+  },
+  {
+    "Crop": "Cereals",
+    "Production 2006-07": 164.1,
+    "Production 2007-08": 174.6,
+    "Production 2008-09": 177.7,
+    "Production 2009-10": 164.4,
+    "Production 2010-11": 183.1
+  },
+  {
+    "Crop": "Gram",
+    "Production 2006-07": 140.6,
+    "Production 2007-08": 127.6,
+    "Production 2008-09": 156.5,
+    "Production 2009-10": 165.9,
+    "Production 2010-11": 182.5
+  },
+  {
+    "Crop": "Arhar",
+    "Production 2006-07": 97,
+    "Production 2007-08": 128.9,
+    "Production 2008-09": 94.9,
+    "Production 2009-10": 103.3,
+    "Production 2010-11": 119.9
+  },
+  {
+    "Crop": "Other Pulses",
+    "Production 2006-07": 139.1,
+    "Production 2007-08": 148.9,
+    "Production 2008-09": 131.4,
+    "Production 2009-10": 118.4,
+    "Production 2010-11": 179.5
+  },
+  {
+    "Crop": "Groundnut",
+    "Production 2006-07": 115.2,
+    "Production 2007-08": 217.5,
+    "Production 2008-09": 169.8,
+    "Production 2009-10": 128.6,
+    "Production 2010-11": 195.7
+  },
+  {
+    "Crop": "Sesamum",
+    "Production 2006-07": 95.5,
+    "Production 2007-08": 116.8,
+    "Production 2008-09": 98.8,
+    "Production 2009-10": 90.8,
+    "Production 2010-11": 137.9
+  },
+  {
+    "Crop": "Rapeseed &Mustard",
+    "Production 2006-07": 138.7,
+    "Production 2007-08": 108.8,
+    "Production 2008-09": 134.3,
+    "Production 2009-10": 123.2,
+    "Production 2010-11": 152.5
+  },
+  {
+    "Crop": "Linseed",
+    "Production 2006-07": 55.9,
+    "Production 2007-08": 54.4,
+    "Production 2008-09": 56.4,
+    "Production 2009-10": 51.2,
+    "Production 2010-11": 48.8
+  },
+  {
+    "Crop": "Castor seed",
+    "Production 2006-07": 124.7,
+    "Production 2007-08": 172.3,
+    "Production 2008-09": 191.6,
+    "Production 2009-10": 165,
+    "Production 2010-11": 220.9
+  },
+  {
+    "Crop": "Safflower",
+    "Production 2006-07": 67.3,
+    "Production 2007-08": 62.8,
+    "Production 2008-09": 53,
+    "Production 2009-10": 50.1,
+    "Production 2010-11": 42.1
+  },
+  {
+    "Crop": "Niger seed",
+    "Production 2006-07": 65.1,
+    "Production 2007-08": 59,
+    "Production 2008-09": 63,
+    "Production 2009-10": 53.8,
+    "Production 2010-11": 58
+  },
+  {
+    "Crop": "Sunflower",
+    "Production 2006-07": 161.3,
+    "Production 2007-08": 192.3,
+    "Production 2008-09": 152.2,
+    "Production 2009-10": 111.8,
+    "Production 2010-11": 85.6
+  },
+  {
+    "Crop": "Soyabean",
+    "Production 2006-07": 253.2,
+    "Production 2007-08": 313.8,
+    "Production 2008-09": 283.4,
+    "Production 2009-10": 285.1,
+    "Production 2010-11": 364.4
+  },
+  {
+    "Crop": "Nine Oilseeds",
+    "Production 2006-07": 147.1,
+    "Production 2007-08": 180.2,
+    "Production 2008-09": 167.9,
+    "Production 2009-10": 150.7,
+    "Production 2010-11": 196.7
+  },
+  {
+    "Crop": "Coconut",
+    "Production 2006-07": 142.7,
+    "Production 2007-08": 91.4,
+    "Production 2008-09": 91.4,
+    "Production 2009-10": 97.5,
+    "Production 2010-11": 97.7
+  },
+  {
+    "Crop": "Cotton seed",
+    "Production 2006-07": 186.1,
+    "Production 2007-08": 212.8,
+    "Production 2008-09": 183.2,
+    "Production 2009-10": 197.5,
+    "Production 2010-11": 271.3
+  },
+  {
+    "Crop": "Cotton(lint)",
+    "Production 2006-07": 213.1,
+    "Production 2007-08": 243.8,
+    "Production 2008-09": 209.8,
+    "Production 2009-10": 226.2,
+    "Production 2010-11": 310.8
+  },
+  {
+    "Crop": "Jute",
+    "Production 2006-07": 220.3,
+    "Production 2007-08": 218.3,
+    "Production 2008-09": 205.8,
+    "Production 2009-10": 239.8,
+    "Production 2010-11": 213.8
+  },
+  {
+    "Crop": "Mesta",
+    "Production 2006-07": 81.7,
+    "Production 2007-08": 84.6,
+    "Production 2008-09": 62.4,
+    "Production 2009-10": 50.1,
+    "Production 2010-11": 52.2
+  },
+  {
+    "Crop": "Jute & Mesta",
+    "Production 2006-07": 200.7,
+    "Production 2007-08": 199.6,
+    "Production 2008-09": 184.5,
+    "Production 2009-10": 210.4,
+    "Production 2010-11": 189.1
+  },
+  {
+    "Crop": "Sannhamp",
+    "Production 2006-07": 97.9,
+    "Production 2007-08": 93,
+    "Production 2008-09": 87.8,
+    "Production 2009-10": 69,
+    "Production 2010-11": 109.9
+  },
+  {
+    "Crop": "Tea",
+    "Production 2006-07": 132.2,
+    "Production 2007-08": 132.8,
+    "Production 2008-09": 132,
+    "Production 2009-10": 132,
+    "Production 2010-11": 132
+  },
+  {
+    "Crop": "Coffee",
+    "Production 2006-07": 138,
+    "Production 2007-08": 139.8,
+    "Production 2008-09": 139.9,
+    "Production 2009-10": 154.5,
+    "Production 2010-11": 161.1
+  },
+  {
+    "Crop": "Rubber",
+    "Production 2006-07": 215.5,
+    "Production 2007-08": 208.6,
+    "Production 2008-09": 216.5,
+    "Production 2009-10": 210.1,
+    "Production 2010-11": 210.1
+  },
+  {
+    "Crop": "Black pepper",
+    "Production 2006-07": 134.2,
+    "Production 2007-08": 91.5,
+    "Production 2008-09": 92.2,
+    "Production 2009-10": 99.2,
+    "Production 2010-11": 101.1
+  },
+  {
+    "Crop": "Dry chilies",
+    "Production 2006-07": 163.5,
+    "Production 2007-08": 170.8,
+    "Production 2008-09": 167.1,
+    "Production 2009-10": 158.3,
+    "Production 2010-11": 160.9
+  },
+  {
+    "Crop": "Dry ginger",
+    "Production 2006-07": 206.3,
+    "Production 2007-08": 200.6,
+    "Production 2008-09": 199.3,
+    "Production 2009-10": 202,
+    "Production 2010-11": 368.1
+  },
+  {
+    "Crop": "Turmeric",
+    "Production 2006-07": 158.6,
+    "Production 2007-08": 160.1,
+    "Production 2008-09": 165.5,
+    "Production 2009-10": 159.8,
+    "Production 2010-11": 200.2
+  },
+  {
+    "Crop": "Arecanut",
+    "Production 2006-07": 182.5,
+    "Production 2007-08": 184.3,
+    "Production 2008-09": 185.5,
+    "Production 2009-10": 184.3,
+    "Production 2010-11": 184.3
+  },
+  {
+    "Crop": "Cardamom",
+    "Production 2006-07": 159.2,
+    "Production 2007-08": 135.8,
+    "Production 2008-09": 157.1,
+    "Production 2009-10": 159.2,
+    "Production 2010-11": 162.2
+  },
+  {
+    "Crop": "Coriander",
+    "Production 2006-07": 126.4,
+    "Production 2007-08": 167.9,
+    "Production 2008-09": 131.3,
+    "Production 2009-10": 128.5,
+    "Production 2010-11": 261.3
+  },
+  {
+    "Crop": "Garlic",
+    "Production 2006-07": 226.2,
+    "Production 2007-08": 311.3,
+    "Production 2008-09": 242.1,
+    "Production 2009-10": 243,
+    "Production 2010-11": 308.2
+  },
+  {
+    "Crop": "Potato",
+    "Production 2006-07": 135.7,
+    "Production 2007-08": 174.2,
+    "Production 2008-09": 210.5,
+    "Production 2009-10": 223.8,
+    "Production 2010-11": 259.1
+  },
+  {
+    "Crop": "Tapioca",
+    "Production 2006-07": 146.4,
+    "Production 2007-08": 151.5,
+    "Production 2008-09": 167.1,
+    "Production 2009-10": 140,
+    "Production 2010-11": 140.3
+  },
+  {
+    "Crop": "Sweet potato",
+    "Production 2006-07": 81.1,
+    "Production 2007-08": 79.3,
+    "Production 2008-09": 94.2,
+    "Production 2009-10": 92.1,
+    "Production 2010-11": 88.1
+  },
+  {
+    "Crop": "Onion",
+    "Production 2006-07": 240.5,
+    "Production 2007-08": 247.3,
+    "Production 2008-09": 367.1,
+    "Production 2009-10": 329.1,
+    "Production 2010-11": 409.1
+  },
+  {
+    "Crop": "Banana",
+    "Production 2006-07": 189.3,
+    "Production 2007-08": 201.1,
+    "Production 2008-09": 298.8,
+    "Production 2009-10": 301.7,
+    "Production 2010-11": 339.4
+  },
+  {
+    "Crop": "Sugarcane",
+    "Production 2006-07": 149.8,
+    "Production 2007-08": 146.7,
+    "Production 2008-09": 120.1,
+    "Production 2009-10": 123.2,
+    "Production 2010-11": 144.3
+  },
+  {
+    "Crop": "Tobacco",
+    "Production 2006-07": 88.1,
+    "Production 2007-08": 83.6,
+    "Production 2008-09": 96.4,
+    "Production 2009-10": 105.3,
+    "Production 2010-11": 140.9
+  }
+]

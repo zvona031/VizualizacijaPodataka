@@ -23,7 +23,9 @@
    svg.selectAll(".subunit")
   .data(countys.features)
   .enter().append("path")
-    .attr("class", function(d) { return "county " + d.properties.ID_1; })
+    .attr("class", function(d) { 
+      console.log(d.properties)
+      return "county " + d.properties.ID_1; })
     .attr("d", path)
           .style("stroke", "gray")
           .style("stroke-width", 0.3)
