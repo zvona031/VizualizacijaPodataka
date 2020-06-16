@@ -1,39 +1,183 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="//d3js.org/d3.v4.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3-queue/3.0.4/d3-queue.min.js"></script>
     <script src="http://d3js.org/topojson.v1.min.js"></script>
-  </head>
-  <body>
+    <style>
+        html,
+        body,
+        #histogram {
+            height: 100%;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <label for="year">Please select a year: </label>
+        <input type="range" min=2006 max=2010 step=1 id="year" value=2014 oninput="selected_year.value = year.value">
+        <output name="selected_year" id="selected_year">2010</output>
+    </form>
+    <div id="histogram">
+    </div>
+    <div id="map">
+    </div>
     <script>
-      var width = 1000, height = 1000;
+        var widthHistogram = document.getElementById('histogram')
+            .clientWidth;
+        var heightHistogram = 500;
+        var widthMap = 1000;
+        var heightMap = 1000;
 
-    var svg = d3.select("body").append("svg")
-    .attr("width", width)
-    .attr("height", height);
+        var margin = {
+            top: 10,
+            bottom: 30,
+            left: 70,
+            right: 20
+        }
 
-    var projection = d3.geo.mercator().scale(1500).translate([(width / 2)-2200, (height / 2)+500]);
+        //BAR CHART
+        var svgHisto = d3.select('#histogram')
+            .append('svg')
+            .attr('width', widthHistogram)
+            .attr('height', heightHistogram)
+            .append('g')
+            .attr('transform', 'translate(' + margin.left + ',' + margin.right + ')');
 
-    var path = d3.geo.path()
-    .projection(projection);
-    
-    d3.json("india-states.json", function(error, india) {
-   if (error) return console.error(error);
-   var countys = topojson.feature(india, india.objects.IND_adm1);
-   svg.selectAll(".subunit")
-  .data(countys.features)
-  .enter().append("path")
-    .attr("class", function(d) { 
-      console.log(d.properties)
-      return "county " + d.properties.ID_1; })
-    .attr("d", path)
-          .style("stroke", "gray")
-          .style("stroke-width", 0.3)
-          .style("stroke-opacity", 1);
+        widthHistogram = widthHistogram - margin.left - margin.right;
+        heightHistogram = heightHistogram - margin.top - margin.bottom;
 
-    
-    });
-    
+        var data = {};
+
+        var x_scale = d3.scaleBand()
+            .rangeRound([0, widthHistogram])
+            .padding(0.1);
+
+        var y_scale = d3.scaleLinear()
+            .range([heightHistogram, 0]);
+        var colour_scale = d3.scaleQuantile()
+            .range(["#ffffe5", "#fff7bc", "#fee391", "#fec44f", "#fe9929", "#ec7014", "#cc4c02", "#993404", "#662506"]);
+
+        var y_axis = d3.axisLeft(y_scale);
+        var x_axis = d3.axisBottom(x_scale);
+
+        svgHisto.append('g')
+            .attr('class', 'x axis')
+            .attr('transform', 'translate(0,' + heightHistogram + ')');
+
+        svgHisto.append('g')
+            .attr('class', 'y axis');
+
+        function draw(year) {
+
+            var csv_data = data[year];
+
+            var t = d3.transition()
+                .duration(2000);
+
+            var crops = csv_data.map(function (d) {
+                return d.crop;
+            });
+            x_scale.domain(crops);
+
+            var max_value = d3.max(csv_data, function (d) {
+                return +d.value;
+            });
+            y_scale.domain([0, max_value]);
+            colour_scale.domain([0, max_value]);
+
+            var bars = svgHisto.selectAll('.bar')
+                .data(csv_data)
+
+            bars
+                .exit()
+                .remove();
+
+            var new_bars = bars
+                .enter()
+                .append('rect')
+                .attr('class', 'bar')
+                .attr('x', function (d) {
+                    return x_scale(d.crop);
+                })
+                .attr('width', x_scale.bandwidth())
+                .attr('y', heightHistogram)
+                .attr('height', 0)
+
+            new_bars.merge(bars)
+                .transition(t)
+                .attr('y', function (d) {
+                    return y_scale(+d.value);
+                })
+                .attr('height', function (d) {
+                    return heightHistogram - y_scale(+d.value)
+                })
+                .attr('fill', function (d) {
+                    return colour_scale(+d.value);
+                })
+
+            svgHisto.select('.x.axis')
+                .call(x_axis);
+            svgHisto.select('.y.axis')
+                .transition(t)
+                .call(y_axis);
+
+        }
+
+        d3.queue()
+            .defer(d3.csv, 'data_2006.csv')
+            .defer(d3.csv, 'data_2007.csv')
+            .defer(d3.csv, 'data_2008.csv')
+            .defer(d3.csv, 'data_2009.csv')
+            .defer(d3.csv, 'data_2010.csv')
+            .await(function (error, d2010, d2009, d2008, d2007, d2006) {
+                data['2006'] = d2006;
+                data['2007'] = d2007;
+                data['2008'] = d2008;
+                data['2009'] = d2009;
+                data['2010'] = d2010;
+                draw('2010');
+            });
+
+        var slider = d3.select('#year');
+        slider.on('change', function () {
+            draw(this.value);
+        });
+
+        //MAP 
+        var svgMap = d3.select("#map").append("svg")
+            .attr("width", widthMap)
+            .attr("height", heightMap);
+
+        var projection = d3.geoMercator().scale(1500).translate([(widthMap / 2) - 2200, (heightMap / 2) + 500]);
+        var path = d3.geoPath()
+            .projection(projection);
+        var colors = d3.scaleOrdinal(d3.schemeCategory20);
+
+        d3.json("india-states.json", function (error, india) {
+            if (error) return console.error(error);
+            var countys = topojson.feature(india, india.objects.IND_adm1);
+            svgMap.selectAll(".subunit")
+                .data(countys.features)
+                .enter().append("path")
+                .attr("class", function (d) {
+                    console.log(d.properties)
+                    return "county " + d.properties.ID_1;
+                })
+                .style("fill", function (d, i) {
+                    return colors(i);
+                })
+                .attr("d", path)
+                .style("stroke", "gray")
+                .style("stroke-width", 0.3)
+                .style("stroke-opacity", 1);
+        });
     </script>
-  </body>
+</body>
+
 </html>
