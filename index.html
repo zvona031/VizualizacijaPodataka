@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <script src="//d3js.org/d3.v4.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/d3-queue/3.0.4/d3-queue.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/d3-queue/3.0.4/d3-queue.min.js"></script> -->
     <script src="http://d3js.org/topojson.v1.min.js"></script>
     <style>
         html,
@@ -14,9 +14,18 @@
             height: 90%;
             margin: 0;
         }
+
         #map {
-            width: 1000px;
+            width: 65%;
+            float: left;
         }
+
+        #msg {
+            width: 35%;
+            float: right;
+            margin-top: 100px;
+        }
+
         #msg {
             height: 50px;
         }
@@ -35,88 +44,88 @@
     <div id="map">
     </div>
     <script>
-        var data1 = [
-  {
-    "Crop": "ARHAR",
-    "State": "Uttar Pradesh",
-    "Cost of Cultivation (`/Hectare) A2+FL": 9794.05,
-    "Cost of Cultivation (`/Hectare) C2": 23076.74,
-    "Cost of Production (`/Quintal) C2": 1941.55,
-    "Yield (Quintal/ Hectare)": 9.83
-  },
-  {
-    "Crop": "COTTON",
-    "State": "Punjab",
-    "Cost of Cultivation (`/Hectare) A2+FL": 29047.1,
-    "Cost of Cultivation (`/Hectare) C2": 50828.83,
-    "Cost of Production (`/Quintal) C2": 2003.76,
-    "Yield (Quintal/ Hectare)": 24.39
-  },
-  {
-    "Crop": "GRAM",
-    "State": "Andhra Pradesh",
-    "Cost of Cultivation (`/Hectare) A2+FL": 14421.98,
-    "Cost of Cultivation (`/Hectare) C2": 26762.09,
-    "Cost of Production (`/Quintal) C2": 1559.04,
-    "Yield (Quintal/ Hectare)": 16.69
-  },
-  {
-    "Crop": "GROUNDNUT",
-    "State": "Gujarat",
-    "Cost of Cultivation (`/Hectare) A2+FL": 22951.28,
-    "Cost of Cultivation (`/Hectare) C2": 30114.45,
-    "Cost of Production (`/Quintal) C2": 1918.92,
-    "Yield (Quintal/ Hectare)": 13.45
-  },
-  {
-    "Crop": "MAIZE",
-    "State": "Bihar",
-    "Cost of Cultivation (`/Hectare) A2+FL": 13513.92,
-    "Cost of Cultivation (`/Hectare) C2": 19857.7,
-    "Cost of Production (`/Quintal) C2": 404.43,
-    "Yield (Quintal/ Hectare)": 42.95
-  },
-  {
-    "Crop": "MOONG",
-    "State": "Maharashtra",
-    "Cost of Cultivation (`/Hectare) A2+FL": 10780.76,
-    "Cost of Cultivation (`/Hectare) C2": 15371.45,
-    "Cost of Production (`/Quintal) C2": 2261.24,
-    "Yield (Quintal/ Hectare)": 6.7
-  },
-  {
-    "Crop": "PADDY",
-    "State": "Punjab",
-    "Cost of Cultivation (`/Hectare) A2+FL": 25154.75,
-    "Cost of Cultivation (`/Hectare) C2": 45291.24,
-    "Cost of Production (`/Quintal) C2": 669.86,
-    "Yield (Quintal/ Hectare)": 67.41
-  },
-  {
-    "Crop": "RAPESEED AND MUSTARD",
-    "State": "Haryana",
-    "Cost of Cultivation (`/Hectare) A2+FL": 14715.27,
-    "Cost of Cultivation (`/Hectare) C2": 27507.54,
-    "Cost of Production (`/Quintal) C2": 1251.12,
-    "Yield (Quintal/ Hectare)": 19.94
-  },
-  {
-    "Crop": "SUGARCANE",
-    "State": "Tamil Nadu",
-    "Cost of Cultivation (`/Hectare) A2+FL": 66335.06,
-    "Cost of Cultivation (`/Hectare) C2": 89025.27,
-    "Cost of Production (`/Quintal) C2": 85.79,
-    "Yield (Quintal/ Hectare)": 1015.45
-  },
-  {
-    "Crop": "WHEAT",
-    "State": "Punjab",
-    "Cost of Cultivation (`/Hectare) A2+FL": 17945.58,
-    "Cost of Cultivation (`/Hectare) C2": 35423.48,
-    "Cost of Production (`/Quintal) C2": 804.8,
-    "Yield (Quintal/ Hectare)": 39.83
-  }
-];
+        var mapData = [
+            {
+                "Crop": "ARHAR",
+                "State": "Uttar Pradesh",
+                "Cost of Cultivation (`/Hectare) A2+FL": 9794.05,
+                "Cost of Cultivation (`/Hectare) C2": 23076.74,
+                "Cost of Production (`/Quintal) C2": 1941.55,
+                "Yield (Quintal/ Hectare)": 9.83
+            },
+            {
+                "Crop": "COTTON",
+                "State": "Punjab",
+                "Cost of Cultivation (`/Hectare) A2+FL": 29047.1,
+                "Cost of Cultivation (`/Hectare) C2": 50828.83,
+                "Cost of Production (`/Quintal) C2": 2003.76,
+                "Yield (Quintal/ Hectare)": 24.39
+            },
+            {
+                "Crop": "GRAM",
+                "State": "Andhra Pradesh",
+                "Cost of Cultivation (`/Hectare) A2+FL": 14421.98,
+                "Cost of Cultivation (`/Hectare) C2": 26762.09,
+                "Cost of Production (`/Quintal) C2": 1559.04,
+                "Yield (Quintal/ Hectare)": 16.69
+            },
+            {
+                "Crop": "GROUNDNUT",
+                "State": "Gujarat",
+                "Cost of Cultivation (`/Hectare) A2+FL": 22951.28,
+                "Cost of Cultivation (`/Hectare) C2": 30114.45,
+                "Cost of Production (`/Quintal) C2": 1918.92,
+                "Yield (Quintal/ Hectare)": 13.45
+            },
+            {
+                "Crop": "MAIZE",
+                "State": "Bihar",
+                "Cost of Cultivation (`/Hectare) A2+FL": 13513.92,
+                "Cost of Cultivation (`/Hectare) C2": 19857.7,
+                "Cost of Production (`/Quintal) C2": 404.43,
+                "Yield (Quintal/ Hectare)": 42.95
+            },
+            {
+                "Crop": "MOONG",
+                "State": "Maharashtra",
+                "Cost of Cultivation (`/Hectare) A2+FL": 10780.76,
+                "Cost of Cultivation (`/Hectare) C2": 15371.45,
+                "Cost of Production (`/Quintal) C2": 2261.24,
+                "Yield (Quintal/ Hectare)": 6.7
+            },
+            {
+                "Crop": "PADDY",
+                "State": "Punjab",
+                "Cost of Cultivation (`/Hectare) A2+FL": 25154.75,
+                "Cost of Cultivation (`/Hectare) C2": 45291.24,
+                "Cost of Production (`/Quintal) C2": 669.86,
+                "Yield (Quintal/ Hectare)": 67.41
+            },
+            {
+                "Crop": "RAPESEED AND MUSTARD",
+                "State": "Haryana",
+                "Cost of Cultivation (`/Hectare) A2+FL": 14715.27,
+                "Cost of Cultivation (`/Hectare) C2": 27507.54,
+                "Cost of Production (`/Quintal) C2": 1251.12,
+                "Yield (Quintal/ Hectare)": 19.94
+            },
+            {
+                "Crop": "SUGARCANE",
+                "State": "Tamil Nadu",
+                "Cost of Cultivation (`/Hectare) A2+FL": 66335.06,
+                "Cost of Cultivation (`/Hectare) C2": 89025.27,
+                "Cost of Production (`/Quintal) C2": 85.79,
+                "Yield (Quintal/ Hectare)": 1015.45
+            },
+            {
+                "Crop": "WHEAT",
+                "State": "Punjab",
+                "Cost of Cultivation (`/Hectare) A2+FL": 17945.58,
+                "Cost of Cultivation (`/Hectare) C2": 35423.48,
+                "Cost of Production (`/Quintal) C2": 804.8,
+                "Yield (Quintal/ Hectare)": 39.83
+            }
+        ];
         var widthHistogram = document.getElementById('histogram')
             .clientWidth;
         var heightHistogram = 500;
@@ -163,32 +172,21 @@
             .attr('class', 'y axis');
 
         function draw(year) {
-
             var csv_data = data[year];
-
             var t = d3.transition()
                 .duration(2000);
-
             var crops = csv_data.map(function (d) {
-                return d.crop;
-            });
+                return d.crop;});
             x_scale.domain(crops);
-
             var max_value = d3.max(csv_data, function (d) {
-                return +d.value;
-            });
+                return +d.value;});
             y_scale.domain([0, max_value]);
             colour_scale.domain([0, max_value]);
-
             var bars = svgHisto.selectAll('.bar')
                 .data(csv_data)
-
-            bars
-                .exit()
+            bars.exit()
                 .remove();
-
-            var new_bars = bars
-                .enter()
+            var new_bars = bars.enter()
                 .append('rect')
                 .attr('class', 'bar')
                 .attr('x', function (d) {
@@ -197,7 +195,6 @@
                 .attr('width', x_scale.bandwidth())
                 .attr('y', heightHistogram)
                 .attr('height', 0)
-
             new_bars.merge(bars)
                 .transition(t)
                 .attr('y', function (d) {
@@ -209,13 +206,11 @@
                 .attr('fill', function (d) {
                     return colour_scale(+d.value);
                 })
-
             svgHisto.select('.x.axis')
                 .call(x_axis);
             svgHisto.select('.y.axis')
                 .transition(t)
                 .call(y_axis);
-
         }
 
         d3.queue()
@@ -248,23 +243,25 @@
             .projection(projection);
         var colors = d3.scaleOrdinal(d3.schemeCategory20);
 
+        var g = svgMap.append("g");
+
         d3.json("india-states.json", function (error, india) {
             if (error) return console.error(error);
             var countys = topojson.feature(india, india.objects.IND_adm1);
-            svgMap.selectAll(".subunit")
+            g.selectAll("path")
                 .data(countys.features)
                 .enter().append("path")
                 .attr("class", function (d) {
                     return "county " + d.properties.ID_1;
                 })
                 .style("fill", function (d, i) {
-                    var state = data1.find(x => x.State == d.properties.NAME_1)
-                    if (state != undefined){
+                    var state = mapData.find(x => x.State == d.properties.NAME_1)
+                    if (state != undefined) {
                         return colors(i);
-                    }else{
+                    } else {
                         return "black";
                     }
-                    
+
                 })
                 .attr("d", path)
                 .style("stroke", "gray")
@@ -273,20 +270,22 @@
                 .each(message);
         });
 
-        function message(d){
+        function message(d) {
             d3.select(this)
-            .on("mouseover",function (){
-                var state = data1.find(x => x.State == d.properties.NAME_1)
-                if (state != undefined){
-                var msg = "State: " +state.State + "<br>";
-                msg += "Crop: " + state.Crop + "<br>";
-                msg += "Yield: " + state["Yield (Quintal/ Hectare)"] + "<br>";
-                document.getElementById("msg").innerHTML = msg
-                }else {
-                    document.getElementById("msg").innerHTML = "This state does not have information in dataset."
-                }
-                
-            })
+                .on("mouseover", function () {
+                    var state = mapData.find(x => x.State == d.properties.NAME_1)
+                    if (state != undefined) {
+                        var msg = "State: " + state.State + "<br>";
+                        msg += "Crop: " + state.Crop + "<br>";
+                        msg += "Yield: " + state["Yield (Quintal/ Hectare)"] + "<br>";
+                        document.getElementById("msg").innerHTML = msg
+                    } else {
+                        document.getElementById("msg").innerHTML = "This state does not have information in dataset."
+                    }
+                })
+                .on("mouseout",function() {
+                    document.getElementById("msg").innerHTML = ""
+                })
         }
     </script>
 </body>
